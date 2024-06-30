@@ -1,5 +1,17 @@
+.restaurant-description {
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 550;
+  font-size: 24px;
+  /* line-height: 34px; */
+  color: #0d3e2f;
+  margin-bottom: 10px;
+}
+
 .foot-desc-txt {
   margin-top: 22px;
+  width: 550px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
@@ -17,13 +29,14 @@
 }
 
 .foot-category-title {
-  width: 106px;
+  /* width: 106px; */
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
-  color: #c5c8c9;
+  color: #0d3e2f;
+  margin-top: 20px;
 }
 
 .foot-category-link {
@@ -57,7 +70,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 34px;
-  color: #c5c8c9;
+  color: #0d3e2f;
 }
 
 .find-us div {
@@ -71,7 +84,9 @@
 }
 
 .copyright-txt {
-  margin-top: 17px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-left: 150px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;

@@ -104,7 +104,7 @@ export default function Products(props: ProductsProps) {
       <div className="main-container">
         <Stack className={"stack-dishes"}>
           <Stack className={"avatar-big-box"}>
-            <Box className={"burak-restaurant-title"}> Burak Restaurant </Box>
+            <Box className={"burak-restaurant-title"}> Uzbegim Restaurant </Box>
             <Box className={"search-bar"}>
               <input
                 type={"search"}
@@ -354,16 +354,16 @@ export default function Products(props: ProductsProps) {
               <Box className={"category-title"}> Our Family Brands</Box>
               <Stack className={"brand-list"}>
                 <Box className={"review-box"}>
-                  <img src={"/img/gurme.webp"} />
+                  <img src={"/img/uzbegim-moscow.jpg"} />
                 </Box>
                 <Box className={"review-box"}>
-                  <img src={"/img/seafood.webp"} />
+                  <img src={"/img/uzbegim-logo.jpeg"} />
                 </Box>
                 <Box className={"review-box"}>
-                  <img src={"/img/sweets.webp"} />
+                  <img src={"/img/uzbegim-tashkent.webp"} />
                 </Box>
                 <Box className={"review-box"}>
-                  <img src={"/img/doner.webp"} />
+                  <img src={"/img/uzbegim-1.png"} />
                 </Box>
               </Stack>
             </Container>
@@ -376,10 +376,7 @@ export default function Products(props: ProductsProps) {
           <div className={"address-area"}>
             <Box className={"title"}>Our address</Box>{" "}
             <iframe
-              style={{ marginTop: "60px" }}
-              src={
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.381251478808!2d69.22388389706612!3d41.32232234466609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b9a0a33281d%3A0x9c5015eab678e435!2z0KDQsNC50YXQvtC9!5e0!3m2!1sen!2skr!4v1711985266429!5m2!1sen!2skr"
-              }
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d396.86115702195445!2d126.98889902107801!3d37.53373701202659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca37ae1df2b6b%3A0x727c210f4e0f0a2c!2sHojiBobo%20Restaurant%20%7C%20Itaewon%20Seoul!5e0!3m2!1sru!2skr!4v1719716834358!5m2!1sru!2skr"
               width="1320"
               height="500"
               referrerPolicy="no-referrer-when-downgrade"

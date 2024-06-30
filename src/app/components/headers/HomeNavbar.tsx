@@ -51,7 +51,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <img className="brand-logo" src="/icons/uzbegim-halal-logo.png" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -162,9 +162,11 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         </Stack>
         <Stack className="header-frame">
           <Stack className="detail">
-            <Box className="head-main-txt">World`s Most Delicious Cousine</Box>
-            <Box className={"wel-txt"}>The Choice, not just a choice</Box>
-            <Box className={"service-txt"}>24 hours service</Box>
+            <Box className="head-main-txt">
+              Explore the Taste of Central Asian Traditional Cuisine
+            </Box>
+            <Box className={"wel-txt"}>Your choice makes sense </Box>
+            <Box className={"service-txt"}>24 Customer support</Box>
             <Box className={"signup"}>
               {!authMember ? (
                 <Button
