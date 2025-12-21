@@ -68,6 +68,7 @@ export default function ChosenProduct(props: ChosenProductsProps) {
       .getRestaurant()
       .then((data) => setRestaurant(data))
       .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!chosenProduct) return null;
@@ -88,7 +89,7 @@ export default function ChosenProduct(props: ChosenProductsProps) {
               const imagePath = `${serverApi}/${ele}`;
               return (
                 <SwiperSlide key={index}>
-                  <img className="slider-image" src={imagePath} />
+                  <img className="slider-image" src={imagePath} alt={chosenProduct?.productName || "Product image"} />
                 </SwiperSlide>
               );
             })}

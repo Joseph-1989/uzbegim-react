@@ -1,4 +1,3 @@
-import { ProductsPageState } from "./../../../lib/types/screen";
 import { createSelector } from "reselect";
 import { AppRootState } from "../../../lib/types/screen";
 

@@ -7,7 +7,6 @@ import { Settings } from "./Settings";
 import "../../../css/userPage.css";
 import { useGlobals } from "../../hooks/useGlobals";
 import { useHistory } from "react-router-dom";
-import { serialize } from "v8";
 import { serverApi } from "../../../lib/config";
 import { MemberType } from "../../../lib/enums/member.enum";
 
@@ -44,6 +43,7 @@ export default function UserPage() {
                         : "/icons/default-user.svg"
                     }
                     className={"order-user-avatar"}
+                    alt="User avatar"
                   />
                   <div className={"order-user-icon-box"}>
                     <img
@@ -52,6 +52,7 @@ export default function UserPage() {
                           ? "/icons/restaurant.svg"
                           : "/icons/user-badge.svg"
                       }
+                      alt="User type badge"
                     />
                   </div>
                 </div>

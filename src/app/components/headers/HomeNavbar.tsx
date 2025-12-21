@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { useEffect, useState } from "react";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
@@ -51,7 +50,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/uzbegim-halal-logo.png" />
+              <img className="brand-logo" src="/icons/uzbegim-halal-logo.png" alt="Uzbegim Halal" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -112,7 +111,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                     ? `${serverApi}/${authMember?.memberImage}`
                     : "/icons/default-user.svg "
                 }
-                aria-haspopup={"true"}
+                alt="User avatar"
                 onClick={handleLogoutClick}
               />
             )}

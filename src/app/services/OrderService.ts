@@ -3,7 +3,6 @@ import { serverApi } from "../../lib/config";
 import {
   Order,
   OrderItemInput,
-  OrderItem,
   OrderInquiry,
   OrderUpdateInput,
 } from "../../lib/types/order";

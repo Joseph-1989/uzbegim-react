@@ -59,6 +59,7 @@ export default function Products(props: ProductsProps) {
       .getProducts(productSearch)
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productSearch]);
 
   useEffect(() => {
@@ -66,6 +67,7 @@ export default function Products(props: ProductsProps) {
       productSearch.search = "";
       setProductSearch({ ...productSearch });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   //** */ HANDLER //
@@ -190,7 +192,7 @@ export default function Products(props: ProductsProps) {
                   variant={"contained"}
                   color={
                     productSearch.productCollection ===
-                    ProductCollection.DESSERT
+                      ProductCollection.DESSERT
                       ? "primary"
                       : "secondary"
                   }
@@ -281,7 +283,7 @@ export default function Products(props: ProductsProps) {
                           >
                             <img
                               src={"/icons/shopping-cart.svg"}
-                              // style={{ display: "flex" }}
+                              alt="Add to cart"
                             />
                           </Button>
 
@@ -354,16 +356,16 @@ export default function Products(props: ProductsProps) {
               <Box className={"category-title"}> Our Family Brands</Box>
               <Stack className={"brand-list"}>
                 <Box className={"review-box"}>
-                  <img src={"/img/uzbegim-moscow.jpg"} />
+                  <img src="/img/uzbegim-moscow.jpg" alt="Uzbegim Moscow" />
                 </Box>
                 <Box className={"review-box"}>
-                  <img src={"/img/uzbegim-logo.jpeg"} />
+                  <img src="/img/uzbegim-logo.jpeg" alt="Uzbegim Logo" />
                 </Box>
                 <Box className={"review-box"}>
-                  <img src={"/img/uzbegim-tashkent.webp"} />
+                  <img src="/img/uzbegim-tashkent.webp" alt="Uzbegim Tashkent" />
                 </Box>
                 <Box className={"review-box"}>
-                  <img src={"/img/uzbegim-1.png"} />
+                  <img src="/img/uzbegim-1.png" alt="Uzbegim" />
                 </Box>
               </Stack>
             </Container>
@@ -380,6 +382,7 @@ export default function Products(props: ProductsProps) {
               width="1320"
               height="500"
               referrerPolicy="no-referrer-when-downgrade"
+              title="Restaurant location on Google Maps"
             ></iframe>
           </div>
         </div>

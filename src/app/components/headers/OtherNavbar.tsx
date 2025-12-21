@@ -35,7 +35,6 @@ export default function OtherNavbar(props: OtherNavbarProps) {
     onRemove,
     onDelete,
     onDeleteAll,
-    setSignupOpen,
     setLoginOpen,
     anchorEl,
     handleLogoutClick,
@@ -51,7 +50,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/uzbegim-halal-logo.png" />
+              <img className="brand-logo" src="/icons/uzbegim-halal-logo.png" alt="Uzbegim Halal" />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -108,7 +107,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                     ? `${serverApi}/${authMember?.memberImage}`
                     : "/icons/default-user.svg "
                 }
-                aria-haspopup={"true"}
+                alt="User avatar"
                 onClick={handleLogoutClick}
               />
             )}

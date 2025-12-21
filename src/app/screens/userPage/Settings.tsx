@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Button from "@mui/material/Button";
 import { useGlobals } from "../../hooks/useGlobals";
-import { memo, useState } from "react";
+import { useState } from "react";
 import { MemberUpdateInput } from "../../../lib/types/member";
 import { T } from "../../../lib/types/common";
 import {
@@ -91,7 +91,7 @@ export function Settings() {
   return (
     <Box className={"settings"}>
       <Box className={"member-media-frame"}>
-        <img src={memberImage} className={"mb-image"} />
+        <img src={memberImage} className={"mb-image"} alt="Member profile" />
         <div className={"media-change-box"}>
           <span>Upload image</span>
           <p>JPG, JPEG, PNG formats only!</p>

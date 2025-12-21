@@ -58,6 +58,7 @@ export default function HomePage() {
       .getTopUsers()
       .then((data) => setTopUsers(data))
       .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

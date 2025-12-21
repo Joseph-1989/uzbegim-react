@@ -1,31 +1,13 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import { Fab, Stack, TextField } from "@mui/material";
+import { Fab, Stack, TextField, Modal, Backdrop, Fade } from "@mui/material";
 import styled from "styled-components";
 import LoginIcon from "@mui/icons-material/Login";
 import { T } from "../../../lib/types/common";
-import { LoginInput, Member, MemberInput } from "../../../lib/types/member";
+import { LoginInput, MemberInput } from "../../../lib/types/member";
 import { Messages } from "../../../lib/config";
 import MemberService from "../../services/MemberService";
 import { sweetErrorHandling } from "../../../lib/sweetAlert";
 import { useGlobals } from "../../hooks/useGlobals";
-
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 2, 2),
-  },
-}));
 
 const ModalImg = styled.img`
   width: 62%;
@@ -45,7 +27,6 @@ interface AuthenticationModalProps {
 
 export default function AuthenticationModal(props: AuthenticationModalProps) {
   const { signupOpen, loginOpen, handleSignupClose, handleLoginClose } = props;
-  const classes = useStyles();
 
   const [memberNick, setMemberNick] = useState<string>("");
   const [memberPhone, setMemberPhone] = useState<string>("");
@@ -127,40 +108,55 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
         open={signupOpen}
         onClose={handleSignupClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
         }}
       >
         <Fade in={signupOpen}>
           <Stack
-            className={classes.paper}
             direction={"row"}
-            sx={{ width: "800px" }}
+            sx={{
+              width: "800px",
+              bgcolor: "background.paper",
+              border: "2px solid #000",
+              boxShadow: 24,
+              p: 2,
+            }}
           >
             <ModalImg src={"/img/auth.webp"} alt="camera" />
-            <Stack sx={{ marginLeft: "69px", alignItems: "center" }}>
+            <Stack
+              component={"form"}
+              sx={{ marginLeft: "69px", alignItems: "center" }}
+              onSubmit={(e) => e.preventDefault()}
+            >
               <h2>Signup Form</h2>
               <TextField
                 sx={{ marginTop: "7px" }}
-                id="outlined-basic"
+                id="signup-username"
                 label="username"
                 variant="outlined"
                 onChange={handleUsername}
               />
               <TextField
                 sx={{ my: "17px" }}
-                id="outlined-basic"
+                id="signup-phone"
                 label="phone number"
                 variant="outlined"
                 onChange={handlePhone}
               />
               <TextField
-                id="outlined-basic"
+                id="signup-password"
                 label="password"
                 variant="outlined"
                 onChange={handlePassword}
@@ -183,49 +179,62 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
         open={loginOpen}
         onClose={handleLoginClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
         }}
       >
         <Fade in={loginOpen}>
           <Stack
-            className={classes.paper}
             direction={"row"}
-            sx={{ width: "700px" }}
+            sx={{
+              width: "700px",
+              bgcolor: "background.paper",
+              border: "2px solid #000",
+              boxShadow: 24,
+              p: 2,
+            }}
           >
             <ModalImg src={"/img/auth.webp"} alt="camera" />
             <Stack
+              component={"form"}
               sx={{
                 marginLeft: "65px",
                 marginTop: "25px",
                 alignItems: "center",
               }}
+              onSubmit={(e) => e.preventDefault()}
             >
               <h2>Login Form</h2>
               <TextField
-                id="outlined-basic"
+                id="login-username"
                 label="username"
                 variant="outlined"
                 sx={{ my: "10px" }}
                 onChange={handleUsername}
               />
               <TextField
-                id={"outlined-basic"}
-                label={"password"}
-                variant={"outlined"}
-                type={"password"}
+                id="login-password"
+                label="password"
+                variant="outlined"
+                type="password"
                 onChange={handlePassword}
                 onKeyDown={handlePasswordKeyDown}
               />
               <Fab
                 sx={{ marginTop: "27px", width: "120px" }}
-                variant={"extended"}
-                color={"primary"}
+                variant="extended"
+                color="primary"
                 onClick={handleLoginRequest}
               >
                 <LoginIcon sx={{ mr: 1 }} />

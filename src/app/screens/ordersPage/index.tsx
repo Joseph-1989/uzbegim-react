@@ -1,5 +1,5 @@
 import React, { useState, SyntheticEvent, useEffect } from "react";
-import { Container, Stack, Box, colors } from "@mui/material";
+import { Container, Stack, Box } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
@@ -29,10 +29,10 @@ const actionDispatch = (dispatch: Dispatch) => ({
 export default function OrdersPage() {
   const { setPausedOrders, setProcessOrders, setFinishedOrders } =
     actionDispatch(useDispatch());
-  const { orderBuilder, authMember, setOrderBuilder } = useGlobals();
+  const { orderBuilder, authMember } = useGlobals();
   const [value, setValue] = useState("1");
   const history = useHistory();
-  const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
+  const [orderInquiry] = useState<OrderInquiry>({
     page: 1,
     limit: 5,
     orderStatus: OrderStatus.PAUSE,
@@ -52,9 +52,10 @@ export default function OrdersPage() {
       .getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.FINISH })
       .then((data) => setFinishedOrders(data))
       .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderInquiry, orderBuilder]);
 
-  // HANDLERS // // HANDLERS // // HANDLERS // // HANDLERS // // HANDLERS //
+  // HANDLERS //
 
   const handleChange = (e: SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -99,6 +100,7 @@ export default function OrdersPage() {
                       : "/icons/default-user.svg"
                   }
                   className={"order-user-avatar"}
+                  alt="User avatar"
                 />
 
                 <div className={"order-user-icon-box"}>
@@ -109,6 +111,7 @@ export default function OrdersPage() {
                         : "/icons/user-badge.svg"
                     }
                     className={"order-user-prof-img"}
+                    alt="User type badge"
                   />
                 </div>
               </div>

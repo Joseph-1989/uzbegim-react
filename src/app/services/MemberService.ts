@@ -1,4 +1,3 @@
-import { Logout } from "@mui/icons-material";
 import { LoginInput, MemberUpdateInput } from "./../../lib/types/member";
 import axios from "axios";
 import { serverApi } from "../../lib/config";

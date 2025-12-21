@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Stack } from "@mui/material";
 import Button from "@mui/material/Button";
 import TabPanel from "@mui/lab/TabPanel";
-import moment from "moment";
 
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
@@ -91,13 +90,13 @@ export default function PausedOrders(props: PausedOrdersProps) {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
                   return (
                     <Box key={item._id} className={"orders-name-price"}>
-                      <img src={imagePath} className={"order-dish-img"} />
+                      <img src={imagePath} className={"order-dish-img"} alt={product.productName} />
                       <p className={"title-dish"}>{product.productName}</p>
                       <Box className={"price-box"}>
                         <p>${item.itemPrice}</p>
-                        <img src={"/icons/close.svg"} />
+                        <img src={"/icons/close.svg"} alt="Multiply" />
                         <p>{item.itemQuantity}</p>
-                        <img src={"/icons/pause.svg"} />
+                        <img src={"/icons/pause.svg"} alt="Equals" />
                         <p style={{ marginLeft: "15px" }}>
                           ${item.itemQuantity * item.itemPrice}
                         </p>
@@ -111,12 +110,13 @@ export default function PausedOrders(props: PausedOrdersProps) {
                 <Box className={"box-total"}>
                   <p>Product price</p>
                   <p>${order.orderTotal - order.orderDelivery}</p>
-                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} />
+                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} alt="Plus" />
                   <p>Delivery cost</p>
                   <p>${order.orderDelivery}</p>
                   <img
                     src={"/icons/pause.svg"}
                     style={{ marginLeft: "20px" }}
+                    alt="Equals"
                   />
                   <p>Total</p>
                   <p>${order.orderTotal}</p>
@@ -156,6 +156,7 @@ export default function PausedOrders(props: PausedOrdersProps) {
               <img
                 src={"/icons/noimage-list.svg"}
                 style={{ width: 300, height: 300 }}
+                alt="No orders"
               />
             </Box>
           ))}
