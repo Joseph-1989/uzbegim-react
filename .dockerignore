@@ -1,0 +1,15 @@
+node_modules
+build
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+README.md
+*.log
+yarn-error.log
+package-lock.json
+/coverage
+HomeCareExperts-next
+.cursor
+DEPLOYMENT_GUIDE.md
