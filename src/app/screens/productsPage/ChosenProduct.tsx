@@ -20,7 +20,7 @@ import ProductService from "../../services/ProductService";
 import { Product } from "../../../lib/types/product";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
-import { serverApi } from "../../../lib/config";
+import { getImageUrl } from "../../../lib/config";
 import { CartItem } from "../../../lib/types/search";
 
 /** REDUX SLICE & SELECTOR */
@@ -86,7 +86,7 @@ export default function ChosenProduct(props: ChosenProductsProps) {
             className="swiper-area"
           >
             {chosenProduct?.productImages.map((ele: string, index: number) => {
-              const imagePath = `${serverApi}/${ele}`;
+              const imagePath = getImageUrl(ele);
               return (
                 <SwiperSlide key={index}>
                   <img className="slider-image" src={imagePath} alt={chosenProduct?.productName || "Product image"} />

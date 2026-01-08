@@ -17,7 +17,7 @@ import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../hooks/useGlobals";
 import { useHistory } from "react-router-dom";
-import { serverApi } from "../../../lib/config";
+import { getImageUrl } from "../../../lib/config";
 import { MemberType } from "../../../lib/enums/member.enum";
 
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -96,7 +96,7 @@ export default function OrdersPage() {
                 <img
                   src={
                     authMember?.memberImage
-                      ? `${serverApi}/${authMember.memberImage}`
+                      ? getImageUrl(authMember.memberImage)
                       : "/icons/default-user.svg"
                   }
                   className={"order-user-avatar"}

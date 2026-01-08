@@ -16,7 +16,7 @@ import { createSelector } from "reselect";
 import { retrieveProducts } from "./selector";
 import { Product, ProductInquiry } from "../../../lib/types/product";
 import { ProductCollection } from "../../../lib/enums/product.enum";
-import { serverApi } from "../../../lib/config";
+import { getImageUrl } from "../../../lib/config";
 import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../lib/types/search";
 
@@ -249,7 +249,7 @@ export default function Products(props: ProductsProps) {
             <Stack className={"product-wrapper"}>
               {products.length !== 0 ? (
                 products.map((product: Product) => {
-                  const imagePath = `${serverApi}/${product.productImages[0]}`;
+                  const imagePath = getImageUrl(product.productImages[0]);
                   const sizeVolume =
                     product.productCollection === ProductCollection.DRINK
                       ? product.productVolume + " litre"

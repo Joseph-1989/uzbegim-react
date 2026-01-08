@@ -7,7 +7,7 @@ import { Settings } from "./Settings";
 import "../../../css/userPage.css";
 import { useGlobals } from "../../hooks/useGlobals";
 import { useHistory } from "react-router-dom";
-import { serverApi } from "../../../lib/config";
+import { getImageUrl } from "../../../lib/config";
 import { MemberType } from "../../../lib/enums/member.enum";
 
 export default function UserPage() {
@@ -39,7 +39,7 @@ export default function UserPage() {
                   <img
                     src={
                       authMember?.memberImage
-                        ? `${serverApi}/${authMember.memberImage}`
+                        ? getImageUrl(authMember.memberImage)
                         : "/icons/default-user.svg"
                     }
                     className={"order-user-avatar"}

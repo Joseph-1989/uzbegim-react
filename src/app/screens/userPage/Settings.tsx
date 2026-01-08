@@ -9,14 +9,14 @@ import {
   sweetErrorHandling,
   sweetTopSmallSuccessAlert,
 } from "../../../lib/sweetAlert";
-import { Messages, serverApi } from "../../../lib/config";
+import { Messages, getImageUrl } from "../../../lib/config";
 import MemberService from "../../services/MemberService";
 
 export function Settings() {
   const { authMember, setAuthMember } = useGlobals();
   const [memberImage, setMemberImage] = useState<string>(
     authMember?.memberImage
-      ? `${serverApi}/${authMember.memberImage}`
+      ? getImageUrl(authMember.memberImage)
       : "/icons/default-user.svg"
   );
   const [memberUpdateInput, setMemberUpdateInput] = useState<MemberUpdateInput>(
